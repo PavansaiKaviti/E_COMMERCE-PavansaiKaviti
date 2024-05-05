@@ -279,7 +279,8 @@ const Productpage = () => {
                         <Rating Rating={review.rating} />
                         <Time time={review.createdAt} />
                         <p>{review.comment}</p>
-                        {UserInfo._id === review.user._id ? (
+                        {UserInfo._id === review.user._id ||
+                        UserInfo.isAdmin === true ? (
                           <div>
                             <LinkContainer to={`/reviewEdit/${review._id}`}>
                               <Button
